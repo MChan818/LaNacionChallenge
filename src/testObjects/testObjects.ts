@@ -1,6 +1,6 @@
-import { TArticle, TArticles } from "../types/TArticle";
+import { TArticle7, TArticles } from "../types/TArticle";
 
-export const testArticle: TArticle = {
+export const testArticle: TArticle7<{subtype: "7"}> = {
 	_id: "ZNJ67CCHJNAEBE6IUETWOXMNFM",
 	display_date: "2019-12-06T17:50:17.735Z",
 	headlines: {
@@ -75,7 +75,7 @@ export const testArticle: TArticle = {
 	},
 	website_url: "/recetas/postres/arroz-con-leche-nid29102019-6/",
 };
-export const testArticle2: TArticle = {
+export const testArticle2: TArticle7<{subtype: "1"}> = {
 	_id: "4B4JM2UP5REJTEE3FEUB34TXYY",
 	display_date: "2019-12-06T12:27:46.485Z",
 	headlines: {
@@ -87,7 +87,7 @@ export const testArticle2: TArticle = {
 	},
 	website_url: "/cocina/recetas/platos-principales/noticias-nacion-nid06122019/",
 };
-export const testArticle3: TArticle = {
+export const testArticle3: TArticle7<{subtype: "7"}> = {
 	_id: "ATLC5WVL4NH5HAHU2BWJXTSATY",
 	display_date: "2019-12-03T16:04:38.007Z",
 	headlines: {
@@ -154,7 +154,7 @@ export const testArticle3: TArticle = {
 	},
 	website_url: "/recetas/nota-receta-de-prueba-do-not-delete-uu-nid03122019/",
 };
-export const testArticle4: TArticle = {
+export const testArticle4: TArticle7<{subtype: "7"}> = {
 	_id: "M7EKLRTZEJEXHJCSH4U5XX6LXQ",
 	display_date: "2019-01-18T09:55:00Z",
 	headlines: {
@@ -229,7 +229,7 @@ export const testArticle4: TArticle = {
 	},
 	website_url: "/recetas/platos-de-comida-principal/hamburguesa-de-berenjenas-nid18012019-6/",
 };
-export const testArticle5: TArticle = {
+export const testArticle5: TArticle7<{subtype: "7"}> = {
 	_id: "F2UOUSFDWFBD5IV7MGGJFEF6BE",
 	display_date: "2019-01-29T16:24:00Z",
 	headlines: {
@@ -304,6 +304,6 @@ export const testArticle5: TArticle = {
 	},
 	website_url: "/recetas/ensaladas/ensalada-fria-de-couscous-de-coliflor-nid29012019-7/",
 };
-export const testArticles: TArticles = {
+export const testArticles: TArticles<{subtype: "7"} | {subtype: "1"}> = {
 	articles: [testArticle, testArticle2, testArticle3, testArticle4, testArticle5],
 };

@@ -9,4 +9,11 @@ describe("HelperDate Tests", ()=>{
         expect(typeof test).toBe("string");
         expect(test).toBe("6 de Diciembre de 2019");
     })
+    it("formatDate empty test", ()=>{
+        const exampleDate: string = "";
+        const test = formatDate(exampleDate);
+
+        expect(typeof test).toBe("string");
+        expect(test).toBe("");
+    })
 })

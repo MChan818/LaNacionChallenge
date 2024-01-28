@@ -9,7 +9,7 @@ export interface TTags extends TTaxonomyTags {
  * @param objects
  * @returns Array of all tags in every article
  */
-export const getTags = (objects: TArticles): TTaxonomyTags[] => {
+export const getTags = (objects: TArticles<{ subtype: "7" }>): TTaxonomyTags[] => {
 	let aux: TTaxonomyTags[] = [];
 	objects.articles.forEach((element: TArticle) => {
 		element.taxonomy.tags.forEach((tag: TTaxonomyTags) => {
@@ -20,11 +20,11 @@ export const getTags = (objects: TArticles): TTaxonomyTags[] => {
 };
 
 /**
- * 
- * @param objects 
+ *
+ * @param objects
  * @returns Unordered array of Tags without repeats
  */
-export const getOrderedTags = (objects: TArticles): TTags[] => {
+export const getOrderedTags = (objects: TArticles<{ subtype: "7" }>): TTags[] => {
 	const tagArray: TTaxonomyTags[] = getTags(objects);
 	const aux: TTags[] = [];
 	tagArray.forEach((tag: TTaxonomyTags) => {
@@ -40,10 +40,10 @@ export const getOrderedTags = (objects: TArticles): TTags[] => {
 			aux.push(transformedTag);
 		}
 	});
-    aux.sort((a:TTags, b: TTags)=>{
-        if(a.count < b.count) return 1;
-        if(a.count > b.count) return -1;
-        return 0;
-    })
+	aux.sort((a: TTags, b: TTags) => {
+		if (a.count < b.count) return 1;
+		if (a.count > b.count) return -1;
+		return 0;
+	});
 	return aux;
 };

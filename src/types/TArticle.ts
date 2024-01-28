@@ -1,15 +1,21 @@
-export interface TArticles {
-	articles: TArticle[];
+export interface TArticles<T> {
+	articles: TArticle7<T>[];
 }
+
+export type TArticle7<T> = T extends {subtype: "7"} ? TArticleWPromoItems : TArticle;
 
 export interface TArticle {
 	display_date: string;
 	headlines: THeadlines;
-	promo_items?: TPromoItems;
 	subtype: string;
 	taxonomy: TTaxonomy;
 	website_url: string;
 	_id: string;
+}
+
+
+interface TArticleWPromoItems extends TArticle{
+	promo_items:TPromoItems;
 }
 
 export interface THeadlines {
