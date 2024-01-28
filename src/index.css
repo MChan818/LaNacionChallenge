@@ -6,7 +6,19 @@
 	font-family: SuecasLab;
 	src: url("./assets/suecaslab-medium-webfont.ttf");
 }
+@font-face {
+	font-family: LnLogos;
+	src: url("./assets/ln-logos.woff");
+}
 
 b {
 	font-family: suecaslab-bold;
+}
+
+.suecaBold {
+	font-family: suecaslab-bold;
+}
+
+.lnLogos {
+	font-family: LnLogos;
 }

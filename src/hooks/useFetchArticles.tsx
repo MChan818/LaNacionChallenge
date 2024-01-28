@@ -15,7 +15,7 @@ const useFetchArticles = () => {
 	useLayoutEffect(() => {
 		const fetchData = async () => {
 			setLoading(true);
-			await fetch(import.meta.env.VITE_ENDPOINT, {
+			await fetch("https://jrt2bb3b2nlkw5ozvfcld62wbe0pnifh.lambda-url.us-east-1.on.aws/", {
 				method: "GET",
 			})
 				.then((res) => res.json())

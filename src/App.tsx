@@ -1,5 +1,5 @@
 import TagList from "./components/Tags/TagList";
-import { testArticles } from "./tests/testObjects";
+// import { testArticles } from "./testObjects/testObjects";
 import Title from "./components/Title/Title";
 import ArticleContainer from "./components/Article/ArticleContainer";
 import ArticleList from "./components/Article/ArticleList";
@@ -7,18 +7,15 @@ import Sidebar from "./components/Sidebar/Sidebar";
 
 import useFetchArticles from "./hooks/useFetchArticles";
 
-import { TArticles, TTaxonomyTags } from "./types/TArticle";
+// import { TArticles } from "./types/TArticle";
 import "./App.css";
-
-interface TTags extends TTaxonomyTags {
-	count: number;
-}
+import TagContainer from "./components/Tags/TagContainer";
 
 const App = (): JSX.Element => {
-	const error: boolean = false;
-	const loading: boolean = false;
-	// const { data, loading, error } = useFetchArticles();
-	const data: TArticles = testArticles;
+	const { data, loading, error } = useFetchArticles();
+	// const error: boolean = false;
+	// const loading: boolean = false;
+	// const data: TArticles = testArticles;
 
 	return data && !loading && !error ? (
 		<div id="wrap">
@@ -26,11 +23,9 @@ const App = (): JSX.Element => {
 				<div className="lay-sidebar">
 					<div className="sidebar__main">
 						<Title />
-						<div className="row">
-							<div className="cont_tags com-secondary-tag hlp-marginBottom-20">
-								<TagList data={data} />
-							</div>
-						</div>
+						<TagContainer>
+							<TagList data={data} />
+						</TagContainer>
 						<ArticleContainer>
 							<ArticleList data={data} />
 						</ArticleContainer>
