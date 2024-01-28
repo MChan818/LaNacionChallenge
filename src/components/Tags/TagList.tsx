@@ -4,7 +4,7 @@ import Tag from "./Tag";
 import { TTags, getOrderedTags } from "../../helpers/HelperArray";
 
 type InputProp = {
-	data: TArticles;
+	data: TArticles<{ subtype: "7" } | { subtype: "1" }>;
 };
 
 const TagList = ({ data }: InputProp): React.ReactNode => {
@@ -13,7 +13,7 @@ const TagList = ({ data }: InputProp): React.ReactNode => {
 	useEffect(() => {
 		const handleData = () => {
 			if (!data) return;
-			const auxArticles: TArticles = data;
+			const auxArticles: TArticles<{ subtype: "7" } | { subtype: "1" }> = data;
 			setTags(getOrderedTags(auxArticles));
 		};
 		handleData();

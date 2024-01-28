@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from "react";
 import { TArticles } from "../types/TArticle";
 
 export type TApiRespose = {
-	data: TArticles;
+	data: TArticles<{ subtype: "7" } | { subtype: "1" }>;
 	error: unknown;
 	loading: boolean;
 };
