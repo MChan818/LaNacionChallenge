@@ -3,7 +3,11 @@ import { TArticles } from "../../types/TArticle";
 import Tag from "./Tag";
 import { TTags, getOrderedTags } from "../../helpers/HelperArray";
 
-const TagList = (data: TArticles) => {
+type InputProp = {
+	data: TArticles;
+};
+
+const TagList = ({ data }: InputProp): React.ReactNode => {
 	const [tags, setTags] = useState<TTags[]>();
 
 	useEffect(() => {

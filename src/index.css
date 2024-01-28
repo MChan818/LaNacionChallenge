@@ -1,0 +1,12 @@
+@font-face {
+	font-family: suecaslab-bold;
+	src: url("./assets/suecaslab-bold-webfont.woff");
+}
+@font-face {
+	font-family: SuecasLab;
+	src: url("./assets/suecaslab-medium-webfont.ttf");
+}
+
+b {
+	font-family: suecaslab-bold;
+}
